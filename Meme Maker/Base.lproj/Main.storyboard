@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,71 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Meme_Maker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NOK-V2-y7F">
+                                <rect key="frame" x="0.0" y="246" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NOK-V2-y7F" secondAttribute="height" multiplier="1:1" id="gXd-k8-D4a"/>
+                                </constraints>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WKl-YV-ehe">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="Pick" id="h56-a7-dzI">
+                                        <connections>
+                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="gdN-ch-0DR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Camera" id="WPq-Fj-Qcx">
+                                        <connections>
+                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="cDt-UD-Cpq"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="BxK-nq-Npi" userLabel="Top Text Field">
+                                <rect key="frame" x="48" y="270" width="318" height="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="1jS-eB-L0g" userLabel="Bottom Text Field">
+                                <rect key="frame" x="48" y="617.5" width="318" height="18.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WKl-YV-ehe" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="90D-iD-MOV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NOK-V2-y7F" secondAttribute="trailing" id="A2P-5i-LbQ"/>
+                            <constraint firstItem="1jS-eB-L0g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="Cqg-23-B7f"/>
+                            <constraint firstItem="NOK-V2-y7F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S4g-Ez-LTj"/>
+                            <constraint firstItem="BxK-nq-Npi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="TVS-5G-nNX"/>
+                            <constraint firstItem="WKl-YV-ehe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aJT-En-WDE"/>
+                            <constraint firstItem="BxK-nq-Npi" firstAttribute="top" secondItem="NOK-V2-y7F" secondAttribute="top" constant="24" id="bp6-Gv-41E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1jS-eB-L0g" secondAttribute="trailing" constant="48" id="een-OT-tvW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BxK-nq-Npi" secondAttribute="trailing" constant="48" id="jKr-z7-SYE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WKl-YV-ehe" secondAttribute="trailing" id="jO5-Z5-dXV"/>
+                            <constraint firstItem="NOK-V2-y7F" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="202" id="mLb-d4-467"/>
+                            <constraint firstItem="1jS-eB-L0g" firstAttribute="bottom" secondItem="NOK-V2-y7F" secondAttribute="bottom" constant="-24" id="xfS-ag-A2v"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="bottomTextField" destination="1jS-eB-L0g" id="bqO-YK-E5S"/>
+                        <outlet property="cameraButton" destination="WPq-Fj-Qcx" id="50k-eP-HkV"/>
+                        <outlet property="imagePickerVIew" destination="NOK-V2-y7F" id="uXz-KQ-Nsy"/>
+                        <outlet property="topTextField" destination="BxK-nq-Npi" id="t9C-Vi-7lL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="127"/>
         </scene>
     </scenes>
 </document>
